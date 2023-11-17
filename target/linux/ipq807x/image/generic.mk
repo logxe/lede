@@ -40,6 +40,14 @@ define Device/redmi_ax6
 endef
 TARGET_DEVICES += redmi_ax6
 
+define Device/redmi_ax6-stock
+	$(call Device/redmi_ax6)
+	DEVICE_VARIANT := (stock layout)
+	KERNEL_SIZE :=
+	ARTIFACTS :=
+endef
+TARGET_DEVICES += redmi_ax6-stock
+
 define Device/tplink_xtr10890
 	$(call Device/FitImage)
 	$(call Device/UbiFit)
@@ -65,6 +73,14 @@ define Device/xiaomi_ax3600
 	DEVICE_PACKAGES := ipq-wifi-xiaomi_ax3600 kmod-ath10k-ct-smallbuffers ath10k-firmware-qca9887-ct
 endef
 TARGET_DEVICES += xiaomi_ax3600
+
+define Device/xiaomi_ax3600-stock
+	$(call Device/xiaomi_ax3600)
+	DEVICE_VARIANT := (stock layout)
+	KERNEL_SIZE :=
+	ARTIFACTS :=
+endef
+TARGET_DEVICES += xiaomi_ax3600-stock
 
 define Device/xiaomi_ax9000
 	$(call Device/FitImage)
